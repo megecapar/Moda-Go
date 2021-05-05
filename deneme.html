@@ -1,24 +1,81 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Web Storage Deneme</title>
+    
+
+    <script>
+        function doFirst(){
+            var button = document.getElementById('button');
+            button.addEventListener("click",save,false);
+            display();
+        }
+
+        function save(){
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var email = document.getElementById('email').value;
+            localStorage.setItem("Username",username);
+            localStorage.setItem("Password",password);
+            localStorage.setItem("Email",email);
+            display();
+            username.value = "";
+            password.value = "";
+            email.value = "";
+        }
+
+        function display(){
+            var display_data = document.getElementById("display_data");
+            display.innerHTML = "";
+            for(var i = 0; i < localStorage.length; i++){
+                var b = localStorage.getItem(i);
+                display_data.innerHTML += " Username: " + b + "<br>";
+            }
+        }
+
+        function clear(){
+            localStorage.clear();
+            location.reload();
+        }
+
+        window.addEventListener("load",doFirst,false);
+    </script>
+    
+    <style>
+        input[type = "text"]{
+            width: 100%;
+            height: 20px;
+            border-radius:5px;
+            border:#666 1px solid;
+        }
+        #box{
+            width: 270px;
+            padding: 10px;
+            background: #ccc;
+            margin: auto;
+            overflow: auto;
+        }
+    </style>
+    
+</head>
 <body>
 
-<h1>Create Account</h1>
-<h3>Your Name:</h3>
-<input name="name" type= "text" placeholder=" ">
-<h3>Email:</h3>
-<input name="name" type= "text" placeholder=" ">
-<h3>Password:</h3>
-<input name="name" type= "text" placeholder=" ">
-<h3>Re-enter password:</h3>
-<input name="name" type= "text" placeholder=" ">
-<h3>Special Notes:</h3>
-<textarea id "specialnotes" name = "notes" rows = "10" cols = "30"></textarea> <br />
-<label for="3d">I accept terms of conditions</label>
-<input id="3d" type="checkbox" name="3dsecure" value="3D Secure" checked="true"><br />
-<label for="3d">I accept privacy rules</label>
-<input id="3d" type="checkbox" name="3dsecure" value="3D Secure" checked="true"><br />
-<button>Create my account</button>
+    <section id = "box">
+        <form>
+            <p>Create Account<br></p>
+            <p>Username:<br><input type = "text" id = "username"/></p>
+            <p>Password:<br><input type = "text" id = "password"/></p>
+            <p>Email:<br><input type = "text" id = "email"/></p>
+            <p><input type = "submit" id = "button" value = "Submit" /></p>
+            <a href = "javascript:clear()">Clear</a>
+        </form>
+    </section>
 
+    <section id = "display_data">
+    
+    </section>
 
 </body>
+
+
 </html>
