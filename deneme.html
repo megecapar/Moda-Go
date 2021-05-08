@@ -38,6 +38,15 @@
             location.reload();
         }
 
+        function ShowHide() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
         window.addEventListener("load",doFirst,false);
     </script>
     
@@ -64,8 +73,9 @@
         <form>
             <p>Create Account<br></p>
             <p>Username:<br><input type = "text" id = "username"/></p>
-            <p>Password:<br><input type = "text" id = "password"/></p>
-            <p>Email:<br><input type = "text" id = "email"/></p>
+            <p>Password:<br><input type = "password" id = "password"/></p>
+            <p>Show your password <input type = "checkbox" onclick = "ShowHide()"></p>
+            <p>Email:<br><input type = "email" id = "email"/></p>
             <p><input type = "submit" id = "button" value = "Submit" /></p>
             <a href = "javascript:clear()">Clear</a>
         </form>
