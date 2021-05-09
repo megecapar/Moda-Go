@@ -25,7 +25,6 @@
                         <li><a href="index.html">Anasayfa</a></li>
                         <li><a href="products.html">Ürünler</a></li>
                         <li><a href="about_us.html">Hakkımızda</a></li>
-                        <li><a href="">İletişim</a></li>
                         <li><a href="account.html">Hesap</a></li>
                     </ul>
                 </nav>
@@ -109,3 +108,16 @@
         </div>
     </div>
     </div>
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: "+90 505 7698694", 
+                call_to_action: "7/24 Hizmetizdeyiz", 
+                position: "right",
+            };
+            var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
