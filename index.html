@@ -15,15 +15,15 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="images/logo.png" width="125px">
+                    <a href="index.html"><img src="images/logo.png" width="125px"></a>
                 </div>
                 <nav>
                     <ul id="menuItems">
-                        <li><a href="">Anasayfa</a></li>
-                        <li><a href="">Ürünler</a></li>
+                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="products.html">Ürünler</a></li>
                         <li><a href="">Hakkımızda</a></li>
                         <li><a href="">İletişim</a></li>
-                        <li><a href="">Hesap</a></li>
+                        <li><a href="account.html">Hesap</a></li>
                     </ul>
                 </nav>
                 <img src="images/sepet.png" width="30px" height="30px">
@@ -170,6 +170,7 @@
         <script>
             var menuItems = document.getElementById("menuItems");
             menuItems.style.maxHeight = "0px";
+
             function menutoggle(){
                 if(menuItems.style.maxHeight == "0px"){
                     menuItems.style.maxHeight = "200px"; 
