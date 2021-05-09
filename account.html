@@ -8,6 +8,82 @@
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script>
+            
+            function store(){
+                var nameValue = document.getElementById('username');
+                var passValue = document.getElementById('password');
+                var lowerCaseLetters = /[a-z]/g;
+                var upperCaseLetters = /[A-Z]/g;
+                var numbers = /[0-9]/g;
+
+                if(nameValue.value.length == 0){
+                    alert('Please fill in email');
+
+                }else if(passValue.value.length == 0){
+                    alert('Please fill in password');
+
+                }else if(nameValue.value.length == 0 && passValue.value.length == 0){
+                    alert('Please fill in email and password');
+
+                }else if(passValue.value.length > 10){
+                    alert('Max of 10');
+
+                }else if(!passValue.value.match(numbers)){
+                    alert('please add 1 number');
+
+                }else if(!passValue.value.match(upperCaseLetters)){
+                    alert('please add 1 uppercase letter');
+
+                }else if(!passValue.value.match(lowerCaseLetters)){
+                    alert('please add 1 lovercase letter');
+
+                }else{
+                    localStorage.setItem('nameValue', nameValue.value);
+                    localStorage.setItem('passValue', passValue.value);
+                    alert('Your account has been created');
+                }
+                }
+
+                function check(){
+                var storedName = localStorage.getItem('nameValue');
+                var storedPassword = localStorage.getItem('passValue');
+
+                var userName = document.getElementById('loginID');
+                var userPass = document.getElementById('loginPass');
+
+                if(userName.value == storedName && userPass.value == storedPassword){
+                    alert('You are logged in.');
+                }else{
+                    alert('Error! Your username or password is incorrect.');
+                }
+                }
+
+
+            function doFirst(){
+                var button = document.getElementById('kaydet')
+                button.addEventListener("click",store,false)
+                var button2 = document.getElementById('logiN')
+                button2.addEventListener("click",check,false)
+            }
+    
+            function clear(){
+                localStorage.clear()
+                location.reload()
+            }
+    
+            function ShowHide() {
+                var x = document.getElementById("password")
+                if (x.type === "password") {
+                    x.type = "text"
+                } else {
+                    x.type = "password"
+                }
+            }
+    
+            window.addEventListener("load",doFirst,false)
+        </script>
+    
     </head>
     <body>
         <div class="container">
@@ -43,16 +119,16 @@
                                 <hr id="Indicator">
                             </div>
                             <form id="loginForm">
-                                <input type="text" placeholder="Kullanıcı Adı">
-                                <input type="password" placeholder="Şifre">
-                                <button type="submit" class="btn">Giriş Yap</button>
+                                <input type="text" placeholder="Kullanıcı Adı" id = "loginID">
+                                <input type="password" placeholder="Şifre" id = "loginPass">
+                                <button type="submit" class="btn" id = "logiN">Giriş Yap</button>
                                 <a href="">Şifremi unuttum</a>
                             </form>
                             <form id="registerForm">
-                                <input type="text" placeholder="Kullanıcı Adı">
-                                <input type="email" placeholder="Mail adresi">
-                                <input type="password" placeholder="Şifre">
-                                <button type="submit" class="btn">Üye Ol</button>
+                                <input type="text" placeholder="Kullanıcı Adı" id = "username">
+                                <input type="email" placeholder="Mail adresi" id =  "email">
+                                <input type="password" placeholder="Şifre" id = "password">
+                                <button type="submit" class="btn" id = "kaydet">Üye Ol</button>
                             </form>
                         </div>
                     </div>
