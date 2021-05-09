@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+    <title>Ürünler - Moda&Go</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="menuItems">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="products.html">Ürünler</a></li>
+                    <li><a href="about_us.html">Hakkımızda</a></li>
+                    <li><a href="account.html">Hesap</a></li>
+                </ul>
+            </nav>
+            <img src="images/sepet.png" width="30px" height="30px">
+            <img src="images/menü.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+    </div>
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Tüm Ürünler</h2>
+            <select>
+                <option>Önerilen sıralama</option>
+                <option>En düşük fiyat</option>
+                <option>En yüksek fiyat</option>
+                <option>En yeniler</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/ürün25.png">
+                <h4>Siyah Topuklu Ayakkabı</h4>
+                <p>100 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün26.png">
+                <h4>Bluz</h4>
+                <p>39 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün27.png">
+                <h4>Efsane Fenerbahçe Forması</h4>
+                <p>170 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün28.png">
+                <h4>Kırmızı Elbise</h4>
+                <p>219 TL</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/ürün29.png">
+                <h4>Bileklik</h4>
+                <p>35 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün30.png">
+                <h4>Siyah Çanta</h4>
+                <p>75 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün31.png">
+                <h4>Sarı Ceket</h4>
+                <p>130 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün32.png">
+                <h4>Kayak Gözlüğü</h4>
+                <p>40 TL</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/ürün33.png">
+                <h4>Kobe Bryant Forması</h4>
+                <p>150 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün34.png">
+                <h4>Bordo Elbise</h4>
+                <p>214 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün35.png">
+                <h4>Siyah Etek</h4>
+                <p>50 TL</p>
+            </div>
+            <div class="col-4">
+                <img src="images/ürün36.png">
+                <h4>Çiçekli Vans</h4>
+                <p>182 TL</p>
+            </div>
+        </div>
+        <div class="page-btn">
+            <a href="products.html"> <span>1</span> </a>
+            <a href="products2.html"> <span>2</span> </a>
+            <span>3</span>
+           
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Mobil Uygulamalar</h3>
+                    <p>Bu uygulamayı Android ve ios
+                        telefonlarınıza indirebilirsiniz.</p>
+                    <div class="app-logo">
+                        <img src="images/app-store.png">
+                        <img src="images/play-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Diledğiniz ürünü cebinizi yakmayan fiyatlara
+                        alın diye biz buradayız.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Bizi Takip Edin</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Yardım</h3>
+                    <ul>
+                        <li>Sıkça Sorulan Sorular</li>
+                        <li>Nasıl İade Edebilirim</li>
+                        <li>Kullanıcı Sözleşmesi</li>
+                        <li>KVKK - Gizlilik Politikası</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">2021 Moda&Go Tic.A.Ş.-Her Hakkı Saklıdır.</p>
+        </div>
+    </div>
+    <script>
+        var menuItems = document.getElementById("menuItems");
+        menuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (menuItems.style.maxHeight == "0px") {
+                menuItems.style.maxHeight = "200px";
+            }
+            else {
+                menuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                whatsapp: "+90 505 7698694",
+                call_to_action: "7/24 Hizmetizdeyiz",
+                position: "right",
+            };
+            var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+</body>
+
+</html>
