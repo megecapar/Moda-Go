@@ -74,8 +74,8 @@
             location.reload()
         }
 
-        function ShowHide() {
-            var x = document.getElementById("password")
+        function ShowHideLogin() {
+            var x = document.getElementById("loginPass")
             if (x.type === "password") {
                 x.type = "text"
             } else {
@@ -120,16 +120,18 @@
                             <hr id="Indicator">
                         </div>
                         <form id="loginForm">
-                            <input type="text" placeholder="Kullanıcı Adı" id="loginID">
-                            <input type="password" placeholder="Şifre" id="loginPass">
-                            <button type="submit" class="btn" id="logiN">Giriş Yap</button>
+                            <input type="text" placeholder="Kullanıcı Adı" id = "loginID">
+                            <input type="password" placeholder="Şifre" id = "loginPass">
+                            <p>Şifreyi göster <input type = "checkbox" class = "checkbox1" onclick = "ShowHideLogin()"></p>
+                            <button type="submit" class="btn" id = "logiN">Giriş Yap</button>
                             <a href="">Şifremi unuttum</a>
                         </form>
                         <form id="registerForm">
-                            <input type="text" placeholder="Kullanıcı Adı" id="username">
-                            <input type="email" placeholder="Mail adresi" id="email">
-                            <input type="password" placeholder="Şifre" id="password">
-                            <button type="submit" class="btn" id="kaydet">Üye Ol</button>
+                            <input type="text" placeholder="Kullanıcı Adı" id = "username">
+                            <input type="email" placeholder="Mail adresi" id =  "email">
+                            <input type="password" placeholder="Şifre" id = "password">
+                            <button type="submit" class="btn" id = "kaydet">Üye Ol</button>
+                        </form>
                         </form>
                     </div>
                 </div>
